@@ -1,6 +1,6 @@
-FROM rust:1.48.0-buster
+FROM rust:1.53.0-buster
 
-ARG PROTOBUF_VERSION=3.14.0
+ARG PROTOBUF_VERSION=3.17.3
 
 RUN apt-get update \
  && apt-get install -y autoconf automake libtool curl make g++ unzip \
