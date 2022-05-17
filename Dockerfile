@@ -1,9 +1,9 @@
-FROM rust:1.53.0-buster
+FROM rust:1.60.0-buster
 
-ARG PROTOBUF_VERSION=3.17.3
+ARG PROTOBUF_VERSION=3.20.1
 
 RUN apt-get update \
- && apt-get install -y autoconf automake libtool curl make g++ unzip \
+ && apt-get install -y curl unzip \
  && curl -L https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOBUF_VERSION/protoc-$PROTOBUF_VERSION-linux-x86_64.zip --output protoc.zip \
  && unzip protoc.zip -d /tmp/protoc-3 \
  && mv /tmp/protoc-3/bin/protoc /usr/local/bin/ \
